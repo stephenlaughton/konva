@@ -53,14 +53,14 @@ declare module Konva {
     }
 
     export class Animation {
-        constructor(func: Function, layers?: Konva.Layer[]);
-        constructor(func: Function, layer?: Konva.Layer);
+        constructor(func: Function, layers?: Layer[]);
+        constructor(func: Function, layer?: Layer);
 
-        addLayer(layer: Konva.Layer) : boolean;
-        getLayers() : Konva.Layer[];
+        addLayer(layer: Layer) : boolean;
+        getLayers() : Layer[];
         isRunning() : boolean;
-        setLayers(layers : Konva.Layer[]) : Animation;
-        setLayers(layer : Konva.Layer) : Animation;
+        setLayers(layers : Layer[]) : Animation;
+        setLayers(layer : Layer) : Animation;
         start() : Animation;
         stop() : Animation;
     }
@@ -283,6 +283,8 @@ declare module Konva {
         clipX(clipX: number) : Container;
         clipY(): number;
         clipY(clipY: number) : Container;
+        clipFunct(): number;
+        clipFunct(clipFunc: Function) : Container;
         destroyChildren() : void;
         find(selector? : string): Collection;
         getAllIntersections(pos: Vector2d): Node[];
@@ -511,7 +513,7 @@ declare module Konva {
         clearTrace(): void;
         fillShape(shape: Shape): void;
         fillStrokeShape(shape: Shape): void;
-        getCanvas() : Konva.Canvas;
+        getCanvas() : Canvas;
         getTrace(relaxed: boolean): string;
         reset(): void;
         moveTo(x : number, y : number) : void;
@@ -802,7 +804,7 @@ declare module Konva {
     class Collection {
         [i : number] : any;
         static toCollection(arr: any[]): Collection;
-        each(f: (el : Konva.Node) => void): void;
+        each(f: (el : Node) => void): void;
         toArray() : any[];
         length: number;
     }
@@ -824,7 +826,8 @@ declare module Konva {
         x: number;
         y: number;
     }
-
 }
 
-export default Konva;
+declare module "konva" {
+    export = Konva;
+}

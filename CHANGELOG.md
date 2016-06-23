@@ -4,6 +4,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Not released][Not released]
 
+## [0.15.0][2016-06-18]
+
+## Added
+- Custom clip function
+
+## [0.14.0][2016-06-17]
+
+### Fixed
+- fixes in typescript definitions
+- fixes for bug with `mouseenter` event on deep nesting case
+
 ## [0.13.9][2016-05-14]
 
 ### Changed
